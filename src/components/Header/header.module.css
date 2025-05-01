@@ -1,0 +1,45 @@
+.container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.img {
+   height: 4.4rem;
+   margin-bottom: 6.5rem;
+}
+
+.header {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 5.2rem;
+}
+
+.header span {
+   font-size: 1.8rem;
+   font-weight: 400;
+   color: #9B9B9B;
+}
+
+.header span strong {
+   font-size: 2rem;
+   font-weight: 700;
+   color: #E8891C;
+}
+
+.header button {
+   border: none;
+   background-color: transparent;
+}
+
+.header button:hover {
+   scale: 1.3;
+}
+
+.header button {
+   transition: scale 0.5s;
+}
+
