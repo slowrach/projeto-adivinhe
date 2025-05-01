@@ -1,0 +1,13 @@
+import styles from "./letter.module.css"
+
+type Props = {
+   value?: string
+}
+
+export function Letter({value = ""}: Props) {
+   return (
+      <div className={styles.container}>
+         <span>{value}</span>
+      </div>
+   )
+}

@@ -11,10 +11,13 @@
 body {
   background-color: #8080fa;
   font-family: "Noto Sans", serif;
-  font-optical-sizing: auto;
   display: grid;
   height: 100vh;
   place-content: center;
+}
+
+input, button {
+  font-family: "Noto Sans", serif;
 }
 
 button {

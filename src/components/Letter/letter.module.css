@@ -1,0 +1,13 @@
+.container {
+   width: 5.4rem;
+   height: 5.4rem;
+   color: #4F4FB9;
+   background-color: #EBEBFC;
+   border-radius: 1rem;
+   text-transform: uppercase;
+   font-size: 3.2rem;
+   font-weight: 700;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
