@@ -11,3 +11,21 @@
    justify-content: center;
    align-items: center;
 }
+
+.small {
+   width: 4.4rem;
+   height: 4.4rem;
+   border-radius: 0.7rem;
+   border: 1px solid #049847;
+}
+
+.correct {
+   color: #03AB4F;
+   background: #E1F5EC;
+}
+
+.wrong {
+   color: #b00808;
+   border: 1px solid #8b0707;
+   background: #fed1c7;
+}
