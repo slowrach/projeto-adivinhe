@@ -1,0 +1,43 @@
+.bg {
+   position: fixed;
+   z-index: 1;
+   width: 100%;
+   height: 100%;
+   backdrop-filter: blur(2px);
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+}
+
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0 3rem;
+   width: 50rem;
+   height: 30rem;
+   background-color: #EBEBFC;
+   color: #4F4FB9;
+   border-radius: 2rem;
+   position: absolute;
+   top: 25%;
+   left: 25%;
+}
+
+.container button {
+   position: absolute;
+   right: 2rem;
+   top: 2rem;
+   border: none;
+   background-color: transparent;
+}
+
+.container button img {
+   width: 5rem;
+}
+
+.container h3 {
+   font-size: 3rem;
+   text-align: center;
+}

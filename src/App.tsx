@@ -7,8 +7,10 @@ import { Letter } from "./components/Letter/letter"
 import { Input } from "./components/Input/input"
 import { Button } from "./components/Button/button"
 import { LettersUsed, LettersUsedProps } from "./components/LettersUsed/letters-used"
+import { Message } from "./components/Message/message"
 
 export function App() {
+  const [message, setMessage] = useState("")
   const [score, setScore] = useState(0)
   const [challenge, setChallenge] = useState<Challenge | null>(null)
   const[letter, setLetter] = useState("")
@@ -35,7 +37,7 @@ export function App() {
     }
 
     if(!letter.trim()) {
-      return alert("Digite uma letra")
+      return setMessage("Digite uma letra")
     }
 
     const value = letter.toUpperCase()
@@ -43,7 +45,7 @@ export function App() {
 
     if(exists) {
       setLetter("")
-      return alert("Você já utilizou a letra " + value)
+      return setMessage("Você já utilizou a letra " + value)
     }
 
     const contains = challenge.saint.toUpperCase().split("").filter((char) => char === value).length
@@ -58,6 +60,10 @@ export function App() {
     setLetter("")
   }
 
+  function clear(){
+    setMessage("")
+  }
+
   useEffect(() => {
     start()
   }, [])
@@ -69,11 +75,13 @@ export function App() {
 
     setTimeout(() => {
       if (score === challenge.saint.length){
-        return alert("Parabéns, você descobriu o santo!")
+        setMessage("🎉 Parabéns, você descobriu o santo! 🎉")
+        start()
       }
 
       if(letterUsed.length === 10){
-        return alert("Você utilizou todas as tentativas")
+        setMessage("Você utilizou todas as tentativas 😢")
+        start()
       }
     }, 300)
   }, [score, letterUsed.length])
@@ -84,6 +92,8 @@ export function App() {
 
   return (
     <div className={styles.container}>
+      {message.length > 0 &&<Message message={message} clear={clear}/>}
+
       <Header current={letterUsed.length} max={10} onRestart={restart}/>
       
       <Tip tip={challenge.tip}/>
@@ -102,7 +112,7 @@ export function App() {
       <h4>Palpite</h4>
       
       <div className={styles.guess}>
-        <Input maxLength={1} onChange={(e) => setLetter(e.target.value)}/>
+        <Input maxLength={1} value={letter} onChange={(e) => setLetter(e.target.value)}/>
         <Button title="Confirmar" onClick={confirm}/>
       </div>
 
