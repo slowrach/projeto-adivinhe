@@ -16,10 +16,6 @@ export function App() {
   const[letter, setLetter] = useState("")
   const [letterUsed, setLetterUsed] = useState<LettersUsedProps[]>([])
 
-  function restart() {
-    start()
-  }
-
   function start() {
     const index = Math.floor(Math.random() * Saints.length)
 
@@ -73,18 +69,16 @@ export function App() {
       return
     }
 
-    setTimeout(() => {
-      if (score === challenge.saint.length){
-        setMessage("🎉 Parabéns, você descobriu o santo! 🎉")
-        start()
-      }
+    if (score === challenge.saint.length){
+      setMessage("🎉 Parabéns, você descobriu o santo! 🎉")
+      start()
+    }
 
-      if(letterUsed.length === 10){
-        setMessage("Você utilizou todas as tentativas 😢")
-        start()
-      }
-    }, 300)
-  }, [score, letterUsed.length])
+    if(letterUsed.length === 10){
+      setMessage("Você utilizou todas as tentativas 😢")
+      start()
+    }
+  }, [score, letterUsed])
 
   if(!challenge) {
     return
@@ -94,7 +88,7 @@ export function App() {
     <div className={styles.container}>
       {message.length > 0 &&<Message message={message} clear={clear}/>}
 
-      <Header current={letterUsed.length} max={10} onRestart={restart}/>
+      <Header current={letterUsed.length} max={10} onRestart={start}/>
       
       <Tip tip={challenge.tip}/>
 
