@@ -15,6 +15,7 @@ export function App() {
   const [challenge, setChallenge] = useState<Challenge | null>(null)
   const[letter, setLetter] = useState("")
   const [letterUsed, setLetterUsed] = useState<LettersUsedProps[]>([])
+  const [shake, setShake] = useState(false)
 
   function start() {
     const index = Math.floor(Math.random() * Saints.length)
@@ -54,6 +55,14 @@ export function App() {
     setScore(currentScore)
 
     setLetter("")
+
+    if(!correct){
+      setShake(true)
+
+      setTimeout(() => {
+        setShake(false)
+      }, 300)
+    }
   }
 
   function clear(){
@@ -92,7 +101,7 @@ export function App() {
       
       <Tip tip={challenge.tip}/>
 
-      <div className={styles.word}>
+      <div className={`${styles.word} ${shake && styles.shake}`}>
         {
           challenge.saint.split("").map((letter, index) => {
             const compare = letterUsed.find((used) => used.value.toUpperCase() === letter.toUpperCase())
