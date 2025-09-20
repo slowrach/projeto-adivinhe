@@ -48,3 +48,13 @@ h4 {
       transform: translateX(0px);
    }
 }
+
+@media (max-width: 768px) {
+   .container {
+      width: 35rem;
+   }
+
+   .container .word {
+      gap: 0.5rem;
+   }
+}
