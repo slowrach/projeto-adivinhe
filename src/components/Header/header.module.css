@@ -6,8 +6,8 @@
 }
 
 .img {
-   height: 4.4rem;
-   margin-bottom: 6.5rem;
+   height: 20rem;
+   margin-bottom: 2rem;
 }
 
 .header {
@@ -43,3 +43,8 @@
    transition: scale 0.5s;
 }
 
+@media (min-width: 600px) {
+   .img {
+      height: 25rem;
+   }
+}

@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.jpg"
 import restart from "../../assets/Frame.svg"
 import styles from "../Header/header.module.css"
 
