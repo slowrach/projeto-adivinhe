@@ -1,6 +1,5 @@
 import styles from "./message.module.css"
-import cancel from "src/assets/cancel.png"
-
+import cancel from "../../assets/cancel.png"
 type Props = {
    message: string
    clear: () => void

@@ -79,7 +79,7 @@ export function App() {
     }
 
     if (score === challenge.saint.length){
-      setMessage("🎉 Parabéns, você descobriu o santo! 🎉")
+      setMessage("Parabéns, você descobriu o santo! 🎉")
       start()
     }
 
