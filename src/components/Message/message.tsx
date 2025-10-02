@@ -1,4 +1,5 @@
 import styles from "./message.module.css"
+import cancel from "src/assets/cancel.png"
 
 type Props = {
    message: string
@@ -10,7 +11,7 @@ export function Message({ message, clear } : Props) {
       <div className={styles.bg}>
          <div className={styles.container}>
             <button type="button" onClick={clear}>
-               <img src="src/assets/cancel.png" alt="Ícone de fechar aba" />
+               <img src={cancel} alt="Ícone de fechar aba" />
             </button>
             <h3>{message}</h3>
          </div>
